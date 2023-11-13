@@ -1,0 +1,10 @@
+
+version: '3.3'
+services:
+  cambiarmoneda:
+    image: "cambiarmoneda"
+    build:
+      context: .
+      dockerfile: ./src/main/docker/Dockerfile
+    ports:
+    - 8090:8090

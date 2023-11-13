@@ -1,0 +1,44 @@
+
+docker tag cambiarmoneda vilel/cambiarmoneda:latest
+docker push vilel/cambiarmoneda:latest
+        
+docker run -d -p 3306:3306 --name db_springboot_backend -e MYSQL_ROOT_PASSWORD=root mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+docker exec -it db_springboot_backend mysql -uroot -p
+docker run -d db_springboot_backend
+
+  {
+      "monedaOrigen": "PEN",
+      "monedaDestino": "USD",
+      "descripcion": "solADolarUsa",
+      "tipo": 0.26
+  }
+  {
+      "monedaOrigen": "PEN",
+      "monedaDestino": "MXN",
+      "descripcion": "solAPesoMexicano",
+      "tipo": 4.65
+  }
+  {
+      "monedaOrigen": "USD",
+      "monedaDestino": "PEN",
+      "descripcion": "dolarUsaASol",
+      "tipo": 3.79
+  }
+  {
+      "monedaOrigen": "USD",
+      "monedaDestino": "MXN",
+      "descripcion": "dolarUsaAPesoMexicano",
+      "tipo": 17.65
+  }
+  {
+      "monedaOrigen": "MXN",
+      "monedaDestino": "PEN",
+      "descripcion": "pesosMexicanoASol",
+      "tipo": 0.21
+  }
+  {
+      "monedaOrigen": "MXN",
+      "monedaDestino": "USD",
+      "descripcion": "pesosMexicanoADolarUsa",
+      "tipo": 0.057
+  }
